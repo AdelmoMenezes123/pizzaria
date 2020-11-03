@@ -18,6 +18,7 @@ pizzaJson.map((item, index)=>{
         e.preventDefault()
 
         let key = pizzaItem.closest('.pizza-item').getAttribute('data-key')
+        modalQt = 1;
 
         c('.pizzaBig img').src = pizzaJson[key].img
         c('.pizzaInfo h1').innerHTML = pizzaJson[key].name
@@ -47,3 +48,19 @@ pizzaJson.map((item, index)=>{
     c('.pizza-area').append(pizzaItem)
 
 })
+
+function closeModal() {
+    
+    c('.pizzaWindowArea').style.opacity = 0;
+    setTimeout(()=>{
+        c('.pizzaWindowArea').style.display = 'none';
+    },500)
+
+
+}
+
+cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton ').forEach((item)=>{
+    item.addEventListener('click',closeModal)
+})
+)
+
