@@ -92,7 +92,7 @@ cs('.pizzaInfo--size').forEach((size, sizeIndex)=>{
     })
 })
 
-c('.pizzaInfor--addButton').addEventListener('click',()=>{
+c('.pizzaInfo--addButton').addEventListener('click',()=>{
     let size = parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
 
     let identifier = pizzaJson[modalKey].id+'@'+size
@@ -116,11 +116,11 @@ c('.pizzaInfor--addButton').addEventListener('click',()=>{
 
 function updateCart() {
     if(cart.length > 0){
-        c('.aside').classList.add('show');
+        c('aside').classList.add('.show');
         for(let i in cart){
             let pizzaItem = pizzaJson.find((item)=>item.id ==cart[i].id)
         }
     }else{
-        c('.aside').classList.remove('show');
+        c('aside').classList.remove('.show');
     }
 }
